@@ -3,6 +3,7 @@ package com.lucasfcarneiro.first_app
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,11 +13,11 @@ class MainActivity : AppCompatActivity() {
         changeText()
     }
 
-    public fun changeText() {
-
-
+    private fun changeText()
+    {
         butaoButton.setOnClickListener{
-            clickBelowTextView.text = "Paralelepipedo"
+            val x = Random.nextInt(0, 20)
+            noNumberChosen.text = "$x"
         }
     }
 
