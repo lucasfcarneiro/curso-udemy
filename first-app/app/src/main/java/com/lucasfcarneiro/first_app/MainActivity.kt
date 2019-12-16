@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     {
         butaoButton.setOnClickListener{
             val x = Random.nextInt(0, 20)
-            noNumberChosen.text = "$x"
+            noNumberChosen.text = "Numero sorteado: $x"
         }
     }
 

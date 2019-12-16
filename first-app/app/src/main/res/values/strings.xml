@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">first-app</string>
+    <string name="app_name">Sorteio</string>
     <string name="button_play">Jogar</string>
     <string name="click_below">Clique abaixo</string>
     <string name ="choose_number">Escolha um numero de 0 a 20</string>

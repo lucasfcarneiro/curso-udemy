@@ -22,7 +22,7 @@
         android:id="@+id/clickBelowTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="50dp"
         android:gravity="center"
         android:text="@string/click_below"
         android:textSize="20sp"
@@ -35,7 +35,7 @@
         android:id="@+id/butaoButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="@string/button_play"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -44,13 +44,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="40dp"
         android:text="@string/no_number_chosen"
         android:textSize="25sp"
         android:id="@+id/noNumberChosen"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/butaoButton"
+        app:layout_constraintBottom_toBottomOf="parent"
 
         />
 
