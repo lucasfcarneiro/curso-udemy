@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Netflix Fake</string>
-    <string name="serieName">House Of Cards</string>
+    <string name="main_act_title">House Of Cards</string>
+    <string name="main_act_subtitle">S1:E12</string>
 </resources>
