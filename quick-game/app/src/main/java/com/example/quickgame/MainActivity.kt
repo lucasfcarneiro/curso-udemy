@@ -2,10 +2,8 @@ package com.example.quickgame
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.*
-import kotlin.random.Random.Default.nextInt
+import kotlin.random.Random
 
 
 class MainActivity : AppCompatActivity() {
@@ -14,28 +12,49 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        rockHandImageView.setOnClickListener{chosenRock()}
-        paperHandImageView.setOnClickListener{chosenPaper()}
-        scissorHandImageView.setOnClickListener {chosenScissor()}
+        var escolhaApp = Random.nextInt(0, 2)
+
+        rockHandImageView.setOnClickListener {
+            var pedra = 0
+            escolher(pedra,escolhaApp)
+        }
+        paperHandImageView.setOnClickListener {
+            var papel = 1
+            escolher(papel,escolhaApp)
+        }
+        scissorHandImageView.setOnClickListener {
+            var tesoura = 2
+            escolher(tesoura,escolhaApp)
+        }
+
+        if (escolhaApp == 0) {//app ganhador
+            appChoiceImageView.setImageResource(R.drawable.rock_hand)
+        } else if (escolhaApp == 1) {//usuario ganhador
+            appChoiceImageView.setImageResource(R.drawable.paper_hand)
+        } else {//empate
+            appChoiceImageView.setImageResource(R.drawable.scissors_hand)
         }
 
 
-    fun optionChosen (){
 
     }
-    private fun chosenRock (){
-        resultText.text = "escolhido pedra"
+}
+
+
+fun escolher(escolhaUsu : Int, escolhaApp : Int) : Int{
+
+    if (   (escolhaApp == 0 && escolhaUsu == 2)  ||  (escolhaApp == 2 && escolhaUsu == 1)  || (escolhaApp == 0 && escolhaUsu == 2))
+        
+    {                 //app ganhador
+
+    } else if () {//usuario ganhador
+
+    } else {//empate
 
     }
-    private fun chosenPaper(){
-        resultText.text = "escolhido papel"
-    }
-    private fun chosenScissor(){
-        resultText.text = "escolhido tesoura"
-    }
 
-    fun IntRange.random() =
-        Random().nextInt((endInclusive + 1) - start) + start
+    return escolhaApp
+}
 
 
 
@@ -43,7 +62,8 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    }
+
+
 
 
 
