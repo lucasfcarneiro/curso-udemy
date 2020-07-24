@@ -12,49 +12,85 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var escolhaApp = Random.nextInt(0, 2)
-
         rockHandImageView.setOnClickListener {
-            var pedra = 0
-            escolher(pedra,escolhaApp)
+            var escolhaUsu = 0
+            var escolhaApp = Random.nextInt(0, 3)
+
+            AlteraImageView(escolhaApp)
+            respostaTextView.setText("app $escolhaApp,  usu $escolhaUsu")
+            VerificaVencedor(escolhaApp,escolhaUsu)
         }
         paperHandImageView.setOnClickListener {
-            var papel = 1
-            escolher(papel,escolhaApp)
+            var escolhaUsu = 1
+            var escolhaApp = Random.nextInt(0, 3)
+            AlteraImageView(escolhaApp)
+            respostaTextView.setText("app $escolhaApp,  usu $escolhaUsu")
+            VerificaVencedor(escolhaApp,escolhaUsu)
         }
         scissorHandImageView.setOnClickListener {
-            var tesoura = 2
-            escolher(tesoura,escolhaApp)
+            var escolhaUsu = 2
+            var escolhaApp = Random.nextInt(0, 3)
+            AlteraImageView(escolhaApp)
+            respostaTextView.setText("app $escolhaApp,  usu $escolhaUsu")
+            VerificaVencedor(escolhaApp,escolhaUsu)
         }
 
-        if (escolhaApp == 0) {//app ganhador
+
+
+
+
+
+
+
+
+       /*
+       fun  FuncaoSemRetorno(x : Int): Unit
+        {
+
+        }
+
+        fun funcaoComRetorno ( x : Int): Int
+        {
+
+            return x + 5
+        }
+
+        */
+
+
+
+    }//Funçoes abaixo
+
+    private fun VerificaVencedor (escolhaApp : Int, escolhaUsu : Int ): Unit
+    {
+        if ((escolhaApp == 0 && escolhaUsu == 2) ||
+            (escolhaApp == 2 && escolhaUsu == 1) ||
+            (escolhaApp == 1 && escolhaUsu == 0)
+        ) {
+            resultText.text = "Voce perdeu"
+        } else if ((escolhaUsu == 0 && escolhaApp == 2) ||
+            (escolhaUsu == 2 && escolhaApp == 1) ||
+            (escolhaUsu == 1 && escolhaApp == 0)
+        ) {
+            resultText.text = "Voce ganhou"
+        } else {
+            resultText.text = "empate"
+        }
+    }
+    private fun AlteraImageView (x : Int): Unit
+    {
+        if (x == 0) {
             appChoiceImageView.setImageResource(R.drawable.rock_hand)
-        } else if (escolhaApp == 1) {//usuario ganhador
+        } else if (x == 1) {
             appChoiceImageView.setImageResource(R.drawable.paper_hand)
-        } else {//empate
+        } else {
             appChoiceImageView.setImageResource(R.drawable.scissors_hand)
         }
-
-
-
     }
 }
 
 
-fun escolher(escolhaUsu : Int, escolhaApp : Int) : Int{
 
-    if (   (escolhaApp == 0 && escolhaUsu == 2)  ||  (escolhaApp == 2 && escolhaUsu == 1)  || (escolhaApp == 0 && escolhaUsu == 2))
-        
-    {                 //app ganhador
-
-    } else if () {//usuario ganhador
-
-    } else {//empate
-
-    }
-
-    return escolhaApp
-}
 
 
 
