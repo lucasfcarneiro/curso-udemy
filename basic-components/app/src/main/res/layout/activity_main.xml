@@ -20,6 +20,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/nameInputEditText"
             android:hint="Digite seu nome" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -39,6 +40,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/emailInputEditText"
             android:hint="Digite seu e-mail" />
     </com.google.android.material.textfield.TextInputLayout>
 
