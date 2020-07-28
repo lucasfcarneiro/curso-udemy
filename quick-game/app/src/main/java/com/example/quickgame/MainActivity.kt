@@ -4,6 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.random.Random
+import com.example.quickgame.ChoiceOptions.ROCK
+import com.example.quickgame.ChoiceOptions.PAPER
+import com.example.quickgame.ChoiceOptions.SCISSORS
+import java.lang.NullPointerException
 
 
 class MainActivity : AppCompatActivity() {
@@ -12,9 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        rockHandImageView.setOnClickListener {rock(0)}
-        paperHandImageView.setOnClickListener {paper(1)}
-        scissorHandImageView.setOnClickListener {scissor(2)}
+        setUserChoice()
 
     }//Funçoes abaixo
 
@@ -30,49 +32,51 @@ class MainActivity : AppCompatActivity() {
         }
         */
 
-    private fun checkWinner (app : Int, user : Int ): Unit
-    {
-        if ((app == 0 && user == 2) ||
-            (app == 2 && user == 1) ||
-            (app == 1 && user == 0)
+    private fun checkWinner(app: ChoiceOptions, user: ChoiceOptions) {
+        if ((app == ROCK && user == SCISSORS) ||
+            (app == SCISSORS && user == PAPER) ||
+            (app == PAPER && user == ROCK)
         ) {
-            resultTextView.text = "Voce perdeu"
-        } else if ((user == 0 && app == 2) ||
-            (user == 2 && app == 1) ||
-            (user == 1 && app == 0)
+            resultTextView.text = getString(R.string.you_lose)
+        } else if ((user == ROCK && app == SCISSORS) ||
+            (user == SCISSORS && app == PAPER) ||
+            (user == PAPER && app == ROCK)
         ) {
-            resultTextView.text = "Voce ganhou"
+            resultTextView.text = getString(R.string.you_win)
         } else {
-            resultTextView.text = "empate"
+            resultTextView.text = getString(R.string.draw)
         }
     }
-    private fun setAppImageView (x : Int): Unit
-    {
-        if (x == 0) {
-            appChoiceImageView.setImageResource(R.drawable.rock_hand)
-        } else if (x == 1) {
-            appChoiceImageView.setImageResource(R.drawable.paper_hand)
-        } else {
-            appChoiceImageView.setImageResource(R.drawable.scissors_hand)
+
+    private fun setAppChoice(): ChoiceOptions {
+        var appChoice = ChoiceOptions.NULL
+        when (Random.nextInt(3)) {
+            0 -> {
+                appChoiceImageView.setImageResource(R.drawable.rock_hand)
+                appChoice = ROCK
+            }
+            1 -> {
+                appChoiceImageView.setImageResource(R.drawable.paper_hand)
+                appChoice = PAPER
+            }
+            2 -> {
+                appChoiceImageView.setImageResource(R.drawable.scissors_hand)
+                appChoice = SCISSORS
+            }
         }
+        return appChoice
     }
-    private fun rock (userChoice : Int): Unit
-    {
-        var appChoice = Random.nextInt(0, 3)
-        setAppImageView(appChoice)
-        checkWinner(appChoice,userChoice)
-    }
-    private fun paper (userChoice : Int): Unit
-    {
-        var appChoice = Random.nextInt(0, 3)
-        setAppImageView(appChoice)
-        checkWinner(appChoice,userChoice)
-    }
-    private fun scissor (userChoice : Int): Unit
-    {
-        var appChoice = Random.nextInt(0, 3)
-        setAppImageView(appChoice)
-        checkWinner(appChoice,userChoice)
+
+    private fun setUserChoice() {
+        rockHandImageView.setOnClickListener {
+            checkWinner(setAppChoice(), ROCK)
+        }
+        paperHandImageView.setOnClickListener {
+            checkWinner(setAppChoice(), PAPER)
+        }
+        scissorHandImageView.setOnClickListener {
+            checkWinner(setAppChoice(), SCISSORS)
+        }
     }
 }
 
