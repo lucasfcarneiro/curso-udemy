@@ -31,8 +31,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkBox() {
-        if (greenCheckBox.isChecked)
-        
-
+        var teste = false
+        if (greenCheckBox.isChecked){
+            teste = true
+            resultTextView.text = "Verde selecionado"
+        }
+        if (redCheckBox.isChecked){
+            //resultTextView.text = "$teste, + vermelho selecionado"
+        }
     }
 }
