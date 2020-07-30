@@ -17,8 +17,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun sendMessage() {
-        checkBox()
-        /*val x = nameInputEditText.text.toString()
+
+
+        /*checkBox()
+        radioButton()
+        val x = nameInputEditText.text.toString()
         val y = emailInputEditText.text.toString()
         resultTextView.text = "Nome: $x Email: $y"
          */
@@ -31,13 +34,33 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkBox() {
-        var teste = false
-        if (greenCheckBox.isChecked){
-            teste = true
+        var teste = ""
+        if (greenCheckBox.isChecked) {
             resultTextView.text = "Verde selecionado"
+            teste = "Verde selecionado"
         }
         if (redCheckBox.isChecked){
-            //resultTextView.text = "$teste, + vermelho selecionado"
+            resultTextView.text = "$teste + vermelho selecionado"
+
         }
+        if (blueCheckBox.isChecked){
+            resultTextView.text = "$teste + azul selecionado"
+        }
+    }
+    private fun radioButton (){
+       radioGroup.setOnCheckedChangeListener { group, checkedId ->
+           if(checkedId == 1){
+               resultTextView.text = "ativado"
+           }
+       }
+
+        /*
+        if(radioMan.isChecked){
+            resultTextView.text = "homem"
+        }else if(radioWoman.isChecked){
+            resultTextView.text = "mulher "
+        }
+        */
+
     }
 }

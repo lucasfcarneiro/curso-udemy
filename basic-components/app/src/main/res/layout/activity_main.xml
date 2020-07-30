@@ -90,16 +90,16 @@
 
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/radioMan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Masculino" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/radioWoman"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Feminino" />
     </RadioGroup>
 
     <TextView
