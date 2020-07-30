@@ -33,9 +33,7 @@
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nameTextInputLayout"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="183dp">
+        app:layout_constraintTop_toBottomOf="@id/nameTextInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/emailInputEditText"
@@ -43,6 +41,40 @@
             android:layout_height="wrap_content"
             android:hint="Digite seu e-mail" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <CheckBox
+        android:id="@+id/greenCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="Verde"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailTextInputLayout"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="376dp" />
+
+    <CheckBox
+        android:id="@+id/redCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="Vermelho"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/greenCheckBox"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="376dp" />
+
+    <CheckBox
+        android:id="@+id/blueCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="Azul"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/redCheckBox"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="376dp" />
 
     <Button
         android:id="@+id/sendButton"
@@ -54,7 +86,7 @@
         android:text="Enviar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/emailTextInputLayout" />
+        app:layout_constraintTop_toBottomOf="@id/blueCheckBox" />
 
     <Button
         android:id="@+id/cleanButton"
@@ -73,10 +105,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="asdasd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cleanButton" />
+
+    <Button
+        android:id="@+id/nextPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        android:text="Proximo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

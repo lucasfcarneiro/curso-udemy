@@ -6,19 +6,33 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        sendButton.setOnClickListener{sendMessage()}
-        cleanButton.setOnClickListener{cleanMessage()}
+        sendButton.setOnClickListener { sendMessage() }
+        cleanButton.setOnClickListener { cleanMessage() }
+
     }
-    private fun  sendMessage (){
-        val x = nameInputEditText.text.toString()
+
+    private fun sendMessage() {
+        checkBox()
+        /*val x = nameInputEditText.text.toString()
         val y = emailInputEditText.text.toString()
-        resultTextView.text =  "$x, $y"
+        resultTextView.text = "Nome: $x Email: $y"
+         */
     }
-    private fun cleanMessage (){
+
+    private fun cleanMessage() {
         resultTextView.text = ""
+        emailInputEditText.setText("")
+        nameInputEditText.setText("")
+    }
+
+    private fun checkBox() {
+        if (greenCheckBox.isChecked)
+        
+
     }
 }
