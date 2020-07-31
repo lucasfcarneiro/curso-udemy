@@ -3,4 +3,6 @@
     <string name="MainSubtitle">Saiba a melhor opção de abastecimento para seu veiculo</string>
     <string name="gasolineName">Preço Gasoline ex: 4,50</string>
     <string name="alcoholName">Preço Alcool ex: 2,90</string>
+    <string name="betterAlcohol">Melhor alcool</string>
+    <string name="betterGasoline">Melhor gasolina</string>
 </resources>

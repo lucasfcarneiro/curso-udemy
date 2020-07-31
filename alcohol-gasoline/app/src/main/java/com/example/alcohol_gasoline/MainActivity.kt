@@ -10,24 +10,29 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         calcButton.setOnClickListener { getPrices() }
-
-
-
     }
 
     private fun getPrices(){
         val alcoholPrice = alcoolEditText.text.toString().toDouble()
         val gasolinePrice = gasolinaEditText.text.toString().toDouble()
 
-        var divisao = gasolinePrice / alcoholPrice
-        if(divisao <= 0.7){
-            resultTextView.text = "Melhor o alcool"
-        }else {
-            resultTextView.text = "Melhor a gasolina"
+       val fieldValidated = validateFields(alcoholPrice,gasolinePrice)
+        if(fieldValidated){
+            val division = alcoholPrice / gasolinePrice
+            if(division <= 0.7){
+                resultTextView.text = getString(R.string.betterAlcohol)
+            }
+            else resultTextView.text = getString(R.string.betterGasoline)
         }
-        limpar()
     }
-    private fun limpar ( ){
-        alcoolEditText.cleaTextView
+    private fun validateFields (x: Double, y : Double ): Boolean{
+        var isValid = true
+        if(x.equals("")){
+            isValid = false
+        }else if (y.equals("")){
+            isValid = false
+        }
+        return isValid
     }
+
 }
