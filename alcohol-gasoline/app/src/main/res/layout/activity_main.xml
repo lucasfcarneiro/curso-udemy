@@ -41,9 +41,11 @@
         tools:layout_editor_absoluteY="280dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/alcoolEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/alcoholName" />
+            android:hint="@string/alcoholName"
+            android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -59,16 +61,43 @@
         tools:layout_editor_absoluteY="280dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/gasolinaEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/gasolineName" />
+            android:hint="@string/gasolineName"
+            android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+        android:id="@+id/calcButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="calcular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gasolineEditText" />
 
-        />
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calcButton" />
+
+    <Button
+        android:id="@+id/cleaTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="limpar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/resultTextView" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
