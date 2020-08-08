@@ -1,12 +1,14 @@
 package com.example.beer_values
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.textfield.TextInputEditText
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlin.math.roundToInt
 
 
 class MainActivity : AppCompatActivity() {
@@ -15,24 +17,35 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         calcButton.setOnClickListener {
-            val firstRadioButtonValue = checkRadioButtonSelection(radioGroup)
-            val secondRadioButtonValue = checkRadioButtonSelection(radioGroup2)
-            val PLitro1 = calcular(firstRadioButtonValue)
-            val PLitro2 = calcular(secondRadioButtonValue)
-            resultFirstTextView.text = "O preço do litro é: ${String.format("%.2f", PLitro1)} reais"
-            resultSecondTextView.text = "O preço do litro é: ${PLitro2 } reais"
-            if (PLitro1 > PLitro2) {
-                resultFinalTextView.text = "Melhor comprar o $PLitro2"
-            } else resultFinalTextView.text = "Melhor comprar o $PLitro1"
+
+            val firstRadioButtonValue = checkRadioButtonSelection(firstRadioGroup)
+            val secondRadioButtonValue = checkRadioButtonSelection(secondRadioGroup)
+
+            val firstLiterPrice = calculatePrice(firstRadioButtonValue,firstPriceEditText)
+            val secondLiterPrice = calculatePrice(secondRadioButtonValue,secondPriceEditText)
+
+            resultFirstTextView.text = "O preço do litro é: ${String.format("%.2f", firstLiterPrice)} reais"
+            resultSecondTextView.text = "O preço do litro é: ${String.format("%.2f", secondLiterPrice)} reais"
+            when {
+                firstLiterPrice > secondLiterPrice -> {
+                    resultFinalTextView.text = "Melhor comprar a segunda opção: ${secondRadioButtonValue.toInt()} ML"
+                }
+                firstLiterPrice == secondLiterPrice -> {
+                    resultFinalTextView.text = "Os preços são iguais"
+                }
+                else -> resultFinalTextView.text = "Melhor comprar a primeira opção: ${firstRadioButtonValue.toInt()} ML"
+            }
+
+            it.hideKeyboard()
         }
+
+        cleanButton.setOnClickListener { cleanFields() }
 
     } //função
 
-
-    private fun calcular(x: Double): Double {
-        val qtdlata: Double = (1000 / x)
-        val preçoLitro = qtdlata * firstPriceEditText.text.toString().toDouble()
-        return preçoLitro
+    private fun calculatePrice(canValue: Double, unitPrice: TextInputEditText): Double {
+        val numberOfCans = 1000 / canValue
+        return numberOfCans * unitPrice.text.toString().toDouble()
     }
 
     private fun checkRadioButtonSelection(radioGroup: RadioGroup): Double {
@@ -55,6 +68,22 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+    private fun cleanFields (){
+        firstPriceEditText.setText("")
+        secondPriceEditText.setText("")
+        resultFirstTextView.text = ""
+        resultSecondTextView.text = ""
+        resultFinalTextView.text = ""
+        secondRadioGroup.clearCheck()
+        firstRadioGroup.clearCheck()
+    }
+
+    fun View.hideKeyboard() {
+        val inputManager = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputManager.hideSoftInputFromWindow(windowToken, 0)
+    }
+
+
 }
 
 
