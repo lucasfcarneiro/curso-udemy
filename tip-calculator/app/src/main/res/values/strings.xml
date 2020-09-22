@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">tip-calculator</string>
+    <string name="percentage100">100%</string>
+    <string name="textTip">Gorjeta</string>
+    <string name="textTotal">Total</string>
+    <string name="hintBillPrice">Digite o valor da conta Ex: 36.50</string>
 </resources>
