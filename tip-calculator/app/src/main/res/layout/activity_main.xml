@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <ImageView
         android:id="@+id/imageViewCoin"
         android:layout_width="match_parent"
@@ -29,6 +30,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
+            android:id="@+id/textInputBillValue"
             android:layout_height="wrap_content"
             android:hint="@string/hintBillPrice" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -40,7 +42,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:padding="5dp"
-        android:text="@string/percentage100"
+        android:text="@string/percentage0"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textInputValue" />
@@ -52,6 +54,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
+        android:max="100"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/textViewPorcentage"
         app:layout_constraintTop_toBottomOf="@id/textInputValue" />
@@ -100,7 +103,6 @@
         android:layout_marginEnd="32dp"
         android:layout_marginTop="16dp"
         android:background="@color/colorLightOrange"
-        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toEndOf="@id/textViewTotal"
