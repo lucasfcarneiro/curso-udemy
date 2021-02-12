@@ -22,9 +22,11 @@ class MainActivity : AppCompatActivity() {
 
         //create adapter to listview
         val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, locations)
+        //val adapter2 = ArrayAdapter<String>(this, android.R.layout.simple_list_item_2, locations)
 
         //add adapter to listview
         mainListView.adapter = adapter
+        //mainListView.adapter = adapter2
 
         //add click to listview
         AdapterView.OnItemClickListener { parent, view, position, id ->
