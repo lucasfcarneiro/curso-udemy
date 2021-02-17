@@ -1,4 +1,4 @@
 package com.example.card_view.adapter;
 
-public class postAdapter {
-}
+public class postAdapter ( private val )
+
