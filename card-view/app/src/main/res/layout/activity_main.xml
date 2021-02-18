@@ -15,9 +15,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/post_item"
-
-        />
-
+        tools:listitem="@layout/post_item"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
