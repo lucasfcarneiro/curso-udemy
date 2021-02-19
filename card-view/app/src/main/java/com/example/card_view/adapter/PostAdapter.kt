@@ -1,6 +1,5 @@
 package com.example.card_view.adapter
 
-import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -26,8 +25,9 @@ class PostAdapter(private val postList: List<Post>) :
 
     class ViewHolder(private val binding: PostItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(post: Post) {
-            binding.nameTextView.text = post.nome
-            binding.postImageView.setImageResource()
+            binding.nameTextView.text = post.name
+            binding.postImageView.setImageResource(post.image)
+            binding.subtitleTextView.text = post.subtitle
         }
     }
 }
