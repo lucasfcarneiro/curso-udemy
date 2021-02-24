@@ -8,7 +8,6 @@ import com.example.passardados.databinding.ActivityThirdBinding
 
 private lateinit var binding: ActivityThirdBinding
 
-
 class ThirdActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

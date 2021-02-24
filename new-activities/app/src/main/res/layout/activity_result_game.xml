@@ -4,28 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="MainActivity">
+    android:background="@color/green_background"
+    tools:context=".ResultGameActivity">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/nextActivityButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="556dp"
-        android:text="@string/second_activity"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/resultGameImageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/goToGameButton"
+        android:id="@+id/backToGameButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:text="@string/play_text"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/back_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nextActivityButton" />
-
+        app:layout_constraintTop_toBottomOf="@id/resultGameImageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

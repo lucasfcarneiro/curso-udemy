@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Passar Dados</string>
+    <string name="second_activity">Segunda activity</string>
+    <string name="play_text">Jogar</string>
 </resources>
