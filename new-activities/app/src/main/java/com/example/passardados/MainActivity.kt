@@ -1,9 +1,9 @@
+package com.example.passardados
 import android.content.Intent
 import com.example.passardados.databinding.ActivityMainBinding
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.passardados.GameActivity
-import com.example.passardados.SecondActivity
+
 
 private lateinit var binding : ActivityMainBinding
 
@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         }
         binding.goToGameButton.setOnClickListener{
             val intent = Intent ( this, GameActivity::class.java)
+            startActivity(intent)
         }
 
     }

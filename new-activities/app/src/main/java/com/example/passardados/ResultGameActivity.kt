@@ -14,13 +14,11 @@ class ResultGameActivity : AppCompatActivity() {
         binding = ActivityResultGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val randomNumber: Int = Random.nextInt(2)
 
-        val randomNumber: Int = Random().nextInt(1,2)
-
-        binding.resultGameImageView.setImageResource()
-
-
-
+        if (randomNumber == 1){
+            binding.resultGameImageView.setImageResource(R.drawable.face_coin)
+        }else binding.resultGameImageView.setImageResource((R.drawable.crown_coin))
 
         binding.backToGameButton.setOnClickListener{
             val intent = Intent (this, GameActivity::class.java)

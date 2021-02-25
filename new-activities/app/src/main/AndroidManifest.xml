@@ -12,7 +12,6 @@
         <activity android:name=".ResultGameActivity"></activity>
         <activity android:name=".GameActivity" />
         <activity android:name=".ThirdActivity" />
-        <activity android:name=".Activity_third" />
         <activity android:name=".SecondActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
