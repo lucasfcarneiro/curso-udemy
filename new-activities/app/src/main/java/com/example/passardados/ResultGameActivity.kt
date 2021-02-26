@@ -13,16 +13,14 @@ class ResultGameActivity : AppCompatActivity() {
         binding = ActivityResultGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val number = intent.getIntExtra("randomNumber", 0)
+        var b : Int
+        val number = intent.getIntExtra("number", 0)
 
         checkResults(number)
 
         binding.backToGameButton.setOnClickListener{
             this.finish()
-            val intent = Intent (this, GameActivity::class.java)
-            startActivity(intent)
         }
-
     }
     private fun checkResults (a : Int)
     {
