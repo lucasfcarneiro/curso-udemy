@@ -7,11 +7,11 @@
     tools:context=".fragments.ChatFragment">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/chatFragmentTextView"
+        android:id="@+id/contactsFragmentTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
-        android:text="CONVERSAS FRAG"
+        android:text="CONTATOS FRAG"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

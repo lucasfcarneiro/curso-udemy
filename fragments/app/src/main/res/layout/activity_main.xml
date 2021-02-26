@@ -15,7 +15,7 @@
         app:layout_constraintGuide_begin="205dp" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/appCompatButton"
+        android:id="@+id/chatButton"
         android:layout_width="0sp"
         android:layout_height="wrap_content"
         android:background="@color/black"
@@ -26,6 +26,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/contactButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/black"
@@ -36,12 +37,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
-        android:id="@+id/frameLayout"
+        android:id="@+id/mainFrameLayoutFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_margin="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatButton" />
+        app:layout_constraintTop_toBottomOf="@+id/chatButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
