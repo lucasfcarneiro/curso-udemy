@@ -13,20 +13,18 @@ class ResultGameActivity : AppCompatActivity() {
         binding = ActivityResultGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var b : Int
         val number = intent.getIntExtra("number", 0)
 
         checkResults(number)
 
-        binding.backToGameButton.setOnClickListener{
+        binding.backToGameButton.setOnClickListener {
             this.finish()
         }
     }
-    private fun checkResults (a : Int)
-    {
-        if (a == 1){
-            binding.resultGameImageView.setImageResource(R.drawable.face_coin)
-        }else binding.resultGameImageView.setImageResource((R.drawable.crown_coin))
 
+    private fun checkResults(a: Int) {
+        if (a == 1) {
+            binding.resultGameImageView.setImageResource(R.drawable.face_coin)
+        } else binding.resultGameImageView.setImageResource((R.drawable.crown_coin))
     }
 }

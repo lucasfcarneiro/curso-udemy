@@ -29,6 +29,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/thirdActivityButton"
+        android:elevation="12dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Terceira activity"
@@ -36,5 +37,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ageTextView" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/searchFloatButton"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:backgroundTint="#655D5D"
+        android:elevation="6dp"
+        android:src="@drawable/ic_search_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
