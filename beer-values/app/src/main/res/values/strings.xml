@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">beer-values</string>
+    <string name="firstUnitPriceTextInput">Preço Unitario</string>
+    <string name="secondUnitPriceTextInput">Preço Unitario</string>
+    <string name="radioButton250">250 ML</string>
+    <string name="radioButton350">350 ML</string>
+    <string name="radioButton473">473 ML</string>
+    <string name="radioButton600">600 ML</string>
+    <string name="calculateButton">Calcular</string>
+    <string name="cleanButton">Limpar</string>
+</resources>
